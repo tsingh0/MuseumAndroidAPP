@@ -9,14 +9,17 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="164dp"
-        android:layout_height="31dp"
+        android:layout_width="242dp"
+        android:layout_height="28dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="78dp"
-        android:text="TextView"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="75dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/the_museum_of_modern_art"
+        android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,10 +28,13 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="44dp"
+        android:contentDescription="@string/the_museum_of_modern_art"
         android:onClick="goWebsite"
         android:scaleType="fitXY"
         android:src="@drawable/moderart"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

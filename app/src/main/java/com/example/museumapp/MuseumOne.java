@@ -6,9 +6,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MuseumOne extends AppCompatActivity {
     private static int option;
+    private static double adultTicketPrice;
+    private static double studentTicketPrice;
+    private static double seniorTicketPrice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +32,9 @@ public class MuseumOne extends AppCompatActivity {
             default:
                 break;
         }
+        Toast.makeText(getApplicationContext(),"Maximum of 5 tickets for each!",Toast.LENGTH_SHORT).show();
 
-        }
+    }
     public static void setOption(int option){
         MuseumOne.option = option;
     }
