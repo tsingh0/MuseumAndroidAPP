@@ -5,5 +5,31 @@
     <string name="museum_of_illusions">Museum of Illusions</string>
     <string name="the_museum_of_modern_art">The Museum of Modern Art</string>
 
+    <string name = "adult_price_met"> Adult $25.00</string>
+    <string name = "senior_price_met">Senior $17.00</string>
+    <string name = "child_price_met">Child $0.00</string>
+    <string name = "adult_price_illusions">Adult $22.00</string>
+    <string name = "senior_price_illusions">Senior $20.00</string>
+    <string name = "child_price_illusions">Child $18.00</string>
+    <string name = "adult_price_history">Adult $23.00</string>
+    <string name = "senior_price_history">Senior $18.00</string>
+    <string name = "child_price_history">Child $13.00</string>
+    <string name = "adult_price_moma">Adult $25.00</string>
+    <string name = "senior_price_moma">Senior $18.00</string>
+    <string name = "child_price_moma">Child $0.00</string>
+    <string name = "calculate_price">Calculate</string>
+    <string name = "Grand_Total">Ticket Total</string>
+    <string name = "ticket_price">Ticket Price</string>
+    <string name = "sales_tax">Sales Tax</string>
+
+    <string-array name="numbers">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+
+    </string-array>
 
 </resources>
