@@ -4,14 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="goWebsite"
-    tools:context=".MuseumOne">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:focusable="true"
-        tools:context=".MuseumThree">
+    android:focusable="true">
 
         <Spinner
             android:id="@+id/spinner_adult"
@@ -174,4 +167,3 @@
             app:layout_constraintTop_toBottomOf="@+id/ticketPrice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>

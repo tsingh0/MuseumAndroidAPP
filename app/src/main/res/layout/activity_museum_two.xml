@@ -4,14 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="goWebsite"
-    tools:context=".MuseumTwo">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:focusable="true"
-        tools:context=".MuseumThree">
+    android:focusable="true">
 
         <Spinner
             android:id="@+id/spinner_adult"
@@ -127,6 +120,7 @@
             android:layout_width="139dp"
             android:layout_height="45dp"
             android:layout_marginTop="16dp"
+            android:onClick="calculate"
             android:text="@string/calculate_price"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -173,4 +167,3 @@
             app:layout_constraintTop_toBottomOf="@+id/ticketPrice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>

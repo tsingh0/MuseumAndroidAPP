@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusable="true"
-    tools:context=".MuseumThree">
+    android:onClick="@string/calculate_price">
 
     <Spinner
         android:id="@+id/spinner_adult"
@@ -121,6 +121,7 @@
         android:layout_width="139dp"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
+        android:onClick="calculate"
         android:text="@string/calculate_price"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -149,19 +150,18 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tax" />
+        app:layout_constraintTop_toBottomOf="@+id/tax"
+        app:layout_constraintVertical_bias="0.02" />
 
     <TextView
         android:id="@+id/tax"
         android:layout_width="107dp"
         android:layout_height="23dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:hint="@string/sales_tax"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ticketPrice" />
 

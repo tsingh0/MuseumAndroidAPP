@@ -4,14 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    tools:context=".MuseumFour">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:focusable="true"
-        tools:context=".MuseumThree">
+    android:focusable="true">
 
         <Spinner
             android:id="@+id/spinner_adult"
@@ -54,14 +47,14 @@
             android:layout_width="242dp"
             android:layout_height="28dp"
             android:layout_marginStart="75dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="75dp"
             android:fontFamily="sans-serif-medium"
             android:text="@string/museum_of_illusions"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.105"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,7 +68,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/illusions"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -99,7 +92,7 @@
             android:id="@+id/textView8"
             android:layout_width="73dp"
             android:layout_height="35dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-medium"
             android:text="@string/adult_price_illusions"
             android:textAlignment="center"
@@ -127,6 +120,7 @@
             android:layout_width="139dp"
             android:layout_height="45dp"
             android:layout_marginTop="16dp"
+            android:onClick="calculate"
             android:text="@string/calculate_price"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -172,4 +166,3 @@
             app:layout_constraintTop_toBottomOf="@+id/ticketPrice" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>

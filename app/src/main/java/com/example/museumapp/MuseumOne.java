@@ -77,43 +77,55 @@ public class MuseumOne extends AppCompatActivity {
     public void calculate(View view){
         switch(option){
             case 1:
-                spinner_child = findViewById(R.id.spinner_child);
-                String numberOfChildren = spinner_child.getSelectedItem().toString();
-                spinner_adult = findViewById(R.id.spinner_adult);
-                String numberOfAdults = spinner_adult.getSelectedItem().toString();
-                spinner_senior = findViewById(R.id.spinner_senior);
-                String numberOfSeniors = spinner_senior.getSelectedItem().toString();
-                int children = Integer.parseInt(numberOfChildren);
-                int adults = Integer.parseInt(numberOfAdults);
-                int seniors = Integer.parseInt(numberOfSeniors);
-                double totalOfTickets = children * Prices.childPriceHistory +adults * Prices.adultPriceHistory+ seniors * Prices.seniorPriceHistory;
-                double taxCost = totalOfTickets * 0.08875;
-                double totalCost = totalOfTickets + taxCost;
-
-                ticketPrice = (TextView)findViewById(R.id.ticketPrice);
-                tax = (TextView)findViewById(R.id.tax);
-                total = (TextView)findViewById(R.id.total);
-
-                ticketPrice.setText("$ "+totalOfTickets+ "");
-                tax.setText("$ "+taxCost+"");
-                total.setText("$ " +totalCost+"");
-
+                setPrice(1);
                 break;
             case 2:
-
-
+                setPrice(2);
                 break;
             case 3:
-
+                setPrice(3);
                 break;
             case 4:
-
+                setPrice(4);
                 break;
             default:
                 break;
         }
     }
 
+private void setPrice(int option) {
+    spinner_child = findViewById(R.id.spinner_child);
+    String numberOfChildren = spinner_child.getSelectedItem().toString();
+    spinner_adult = findViewById(R.id.spinner_adult);
+    String numberOfAdults = spinner_adult.getSelectedItem().toString();
+    spinner_senior = findViewById(R.id.spinner_senior);
+    String numberOfSeniors = spinner_senior.getSelectedItem().toString();
+    int children = Integer.parseInt(numberOfChildren);
+    int adults = Integer.parseInt(numberOfAdults);
+    int seniors = Integer.parseInt(numberOfSeniors);
+    double totalOfTickets =0;
+    switch (option) {
+        case 1:
+             totalOfTickets = children * Prices.childPriceHistory + adults * Prices.adultPriceHistory + seniors * Prices.seniorPriceHistory;
+             break;
+        case 2:
+            totalOfTickets = children * Prices.childPriceMet + adults * Prices.adultPriceMet + seniors * Prices.seniorPriceMet;
+            break;
+        case 3:
+            totalOfTickets = children * Prices.childPriceMoMa + adults * Prices.adultPriceMoMa + seniors * Prices.seniorPriceMoMa;
+            break;
+        case 4:
+            totalOfTickets = children * Prices.childPriceIllusions + adults * Prices.adultPriceIllusions+ seniors * Prices.seniorPriceIllusions;
 
+    }
+    double taxCost = totalOfTickets * 0.08875;
+    double totalCost = totalOfTickets + taxCost;
+    ticketPrice = (TextView) findViewById(R.id.ticketPrice);
+    tax = (TextView) findViewById(R.id.tax);
+    total = (TextView) findViewById(R.id.total);
 
+    ticketPrice.setText("$ " + totalOfTickets + "");
+    tax.setText("$ " + taxCost + "");
+    total.setText("$ " + totalCost + "");
+}
 }
