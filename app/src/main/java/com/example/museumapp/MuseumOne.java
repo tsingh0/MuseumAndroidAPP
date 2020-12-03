@@ -3,6 +3,7 @@ package com.example.museumapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DecimalFormat;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import static com.example.museumapp.R.drawable.*;
 
 /**
@@ -47,7 +49,7 @@ public class MuseumOne extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        switch(option){
+        switch (option) {
             case 1:
                 setContentView(R.layout.activity_museum_one);
 
@@ -127,7 +129,7 @@ public class MuseumOne extends AppCompatActivity {
             default:
                 break;
         }
-        Toast.makeText(getApplicationContext(),"Maximum of 5 tickets for each!",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Maximum of 5 tickets for each!", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -138,7 +140,7 @@ public class MuseumOne extends AppCompatActivity {
      *
      * @param option
      */
-    public static void setOption(int option){
+    public static void setOption(int option) {
         MuseumOne.option = option;
     }
 
@@ -148,9 +150,9 @@ public class MuseumOne extends AppCompatActivity {
      *
      * @param view
      */
-    public void goWebsite(View view){
+    public void goWebsite(View view) {
 
-        switch(option){
+        switch (option) {
             case 1:
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.amnh.org/")));
                 break;
@@ -175,8 +177,8 @@ public class MuseumOne extends AppCompatActivity {
      *
      * @param view
      */
-    public void calculate(View view){
-        switch(option){
+    public void calculate(View view) {
+        switch (option) {
             case 1:
                 setPrice(1);
                 break;
@@ -203,38 +205,38 @@ public class MuseumOne extends AppCompatActivity {
      * @param option
      */
     private void setPrice(int option) {
-    spinner_child = findViewById(R.id.spinner_child);
-    String numberOfChildren = spinner_child.getSelectedItem().toString();
-    spinner_adult = findViewById(R.id.spinner_adult);
-    String numberOfAdults = spinner_adult.getSelectedItem().toString();
-    spinner_senior = findViewById(R.id.spinner_senior);
-    String numberOfSeniors = spinner_senior.getSelectedItem().toString();
-    int children = Integer.parseInt(numberOfChildren);
-    int adults = Integer.parseInt(numberOfAdults);
-    int seniors = Integer.parseInt(numberOfSeniors);
-    double totalOfTickets =0;
-    switch (option) {
-        case 1:
-             totalOfTickets = children * Prices.childPriceHistory + adults * Prices.adultPriceHistory + seniors * Prices.seniorPriceHistory;
-             break;
-        case 2:
-            totalOfTickets = children * Prices.childPriceMet + adults * Prices.adultPriceMet + seniors * Prices.seniorPriceMet;
-            break;
-        case 3:
-            totalOfTickets = children * Prices.childPriceMoMa + adults * Prices.adultPriceMoMa + seniors * Prices.seniorPriceMoMa;
-            break;
-        case 4:
-            totalOfTickets = children * Prices.childPriceIllusions + adults * Prices.adultPriceIllusions+ seniors * Prices.seniorPriceIllusions;
+        spinner_child = findViewById(R.id.spinner_child);
+        String numberOfChildren = spinner_child.getSelectedItem().toString();
+        spinner_adult = findViewById(R.id.spinner_adult);
+        String numberOfAdults = spinner_adult.getSelectedItem().toString();
+        spinner_senior = findViewById(R.id.spinner_senior);
+        String numberOfSeniors = spinner_senior.getSelectedItem().toString();
+        int children = Integer.parseInt(numberOfChildren);
+        int adults = Integer.parseInt(numberOfAdults);
+        int seniors = Integer.parseInt(numberOfSeniors);
+        double totalOfTickets = 0;
+        switch (option) {
+            case 1:
+                totalOfTickets = children * Prices.childPriceHistory + adults * Prices.adultPriceHistory + seniors * Prices.seniorPriceHistory;
+                break;
+            case 2:
+                totalOfTickets = children * Prices.childPriceMet + adults * Prices.adultPriceMet + seniors * Prices.seniorPriceMet;
+                break;
+            case 3:
+                totalOfTickets = children * Prices.childPriceMoMa + adults * Prices.adultPriceMoMa + seniors * Prices.seniorPriceMoMa;
+                break;
+            case 4:
+                totalOfTickets = children * Prices.childPriceIllusions + adults * Prices.adultPriceIllusions + seniors * Prices.seniorPriceIllusions;
 
+        }
+        double taxCost = totalOfTickets * 0.08875;
+        double totalCost = totalOfTickets + taxCost;
+        ticketPrice = (TextView) findViewById(R.id.ticketPrice);
+        tax = (TextView) findViewById(R.id.tax);
+        total = (TextView) findViewById(R.id.total);
+
+        ticketPrice.setText("$ " + df2.format(totalOfTickets) + "");
+        tax.setText("$ " + df.format(taxCost) + "");
+        total.setText("$ " + df.format(totalCost) + "");
     }
-    double taxCost = totalOfTickets * 0.08875;
-    double totalCost = totalOfTickets + taxCost;
-    ticketPrice = (TextView) findViewById(R.id.ticketPrice);
-    tax = (TextView) findViewById(R.id.tax);
-    total = (TextView) findViewById(R.id.total);
-
-    ticketPrice.setText("$ " + df2.format(totalOfTickets) + "");
-    tax.setText("$ " + df.format(taxCost) + "");
-    total.setText("$ " + df.format(totalCost) + "");
-}
 }

@@ -33,40 +33,43 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void sendNextActivity_1(View view){
-        Intent intent = new Intent(this , MuseumOne.class);
+    public void sendNextActivity_1(View view) {
+        Intent intent = new Intent(this, MuseumOne.class);
         MuseumOne.setOption(1);
         startActivity(intent);
     }
+
     /**
      * sendNextActivity_2 method is activated when the second museum is selected and
      * sets the option to 2 and passes it to the next activity.
      *
      * @param view
      */
-    public void sendNextActivity_2(View view){
+    public void sendNextActivity_2(View view) {
         Intent intent = new Intent(this, MuseumOne.class);
         MuseumOne.setOption(2);
         startActivity(intent);
     }
+
     /**
      * sendNextActivity_3 method is activated when the third museum is selected and
      * sets the option to 3 and passes it to the next activity.
      *
      * @param view
      */
-    public void sendNextActivity_3(View view){
+    public void sendNextActivity_3(View view) {
         Intent intent = new Intent(this, MuseumOne.class);
         MuseumOne.setOption(3);
         startActivity(intent);
     }
+
     /**
      * sendNextActivity_4 method is activated when the fourth museum is selected and
      * sets the option to 4 and passes it to the next activity.
      *
      * @param view
      */
-    public void sendNextActivity_4(View view){
+    public void sendNextActivity_4(View view) {
         Intent intent = new Intent(this, MuseumOne.class);
         MuseumOne.setOption(4);
         startActivity(intent);
