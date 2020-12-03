@@ -4,53 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#450707"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:onClick="sendNextActivity_4"
-        android:text="@string/museum_of_illusions"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:onClick="sendNextActivity_2"
-        android:text="@string/the_metropolitan_museum_of_art"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
+    <ImageButton
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
+        android:layout_width="420dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#000000"
         android:onClick="sendNextActivity_1"
-        android:text="@string/american_museum_of_natural_history"
+        android:padding="4dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/finaldino" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:onClick="sendNextActivity_3"
-        android:text="@string/the_museum_of_modern_art"
+    <ImageButton
+        android:id="@+id/button2"
+        android:layout_width="420dp"
+        android:layout_height="175dp"
+        android:backgroundTint="#000000"
+        android:onClick="sendNextActivity_2"
+        android:padding="4dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:srcCompat="@drawable/metpainting" />
+
+    <ImageButton
+        android:id="@+id/button3"
+        android:layout_width="420dp"
+        android:layout_height="175dp"
+        android:backgroundTint="#000000"
+        android:onClick="sendNextActivity_3"
+        android:padding="4dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:srcCompat="@drawable/mmodernarts" />
+
+    <ImageButton
+        android:id="@+id/button4"
+        android:layout_width="420dp"
+        android:layout_height="175dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#000000"
+        android:onClick="sendNextActivity_4"
+        android:padding="4dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:srcCompat="@drawable/illusionsfinal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

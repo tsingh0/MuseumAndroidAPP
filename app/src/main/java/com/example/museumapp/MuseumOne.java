@@ -2,21 +2,22 @@ package com.example.museumapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+import java.text.DecimalFormat;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import static com.example.museumapp.R.drawable.*;
 
 public class MuseumOne extends AppCompatActivity {
     private static int option;
     private static double adultTicketPrice;
     private static double studentTicketPrice;
     private static double seniorTicketPrice;
-    private TextView AMNH;
 
     private Spinner spinner_child;
     private Spinner spinner_adult;
@@ -25,23 +26,90 @@ public class MuseumOne extends AppCompatActivity {
     private TextView tax;
     private TextView total;
 
+    DecimalFormat df = new DecimalFormat("#,###,##0.00");
+    DecimalFormat df2 = new DecimalFormat("0");
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         switch(option){
             case 1:
                 setContentView(R.layout.activity_museum_one);
 
+                TextView historyName = findViewById(R.id.museumName);
+                historyName.setText(R.string.american_museum_of_natural_history);
+
+                ImageButton historyImage = findViewById(R.id.museumImage);
+                historyImage.setImageResource(b9);
+
+                TextView historyStudent = findViewById(R.id.studentPrice);
+                historyStudent.setText(R.string.child_price_history);
+
+                TextView historyAdult = findViewById(R.id.adultPrice);
+                historyAdult.setText(R.string.adult_price_history);
+
+                TextView historySenior = findViewById(R.id.seniorPrice);
+                historySenior.setText(R.string.senior_price_history);
 
                 break;
             case 2:
-                setContentView(R.layout.activity_museum_two);
+                setContentView(R.layout.activity_museum_one);
+
+                TextView metName = findViewById(R.id.museumName);
+                metName.setText(R.string.the_metropolitan_museum_of_art);
+
+                ImageButton metImage = findViewById(R.id.museumImage);
+                metImage.setImageResource(met);
+
+                TextView metStudent = findViewById(R.id.studentPrice);
+                metStudent.setText(R.string.child_price_met);
+
+                TextView metAdult = findViewById(R.id.adultPrice);
+                metAdult.setText(R.string.adult_price_met);
+
+                TextView metSenior = findViewById(R.id.seniorPrice);
+                metSenior.setText(R.string.senior_price_met);
+
                 break;
             case 3:
-                setContentView(R.layout.activity_museum_three);
+                setContentView(R.layout.activity_museum_one);
+
+                TextView momaName = findViewById(R.id.museumName);
+                momaName.setText(R.string.the_museum_of_modern_art);
+
+                ImageButton momaImage = findViewById(R.id.museumImage);
+                momaImage.setImageResource(moderart);
+
+                TextView momaStudent = findViewById(R.id.studentPrice);
+                momaStudent.setText(R.string.child_price_moma);
+
+                TextView momaAdult = findViewById(R.id.adultPrice);
+                momaAdult.setText(R.string.adult_price_moma);
+
+                TextView momaSenior = findViewById(R.id.seniorPrice);
+                momaSenior.setText(R.string.senior_price_moma);
+
                 break;
             case 4:
-                setContentView(R.layout.activity_museum_four);
+                setContentView(R.layout.activity_museum_one);
+
+                TextView illusionName = findViewById(R.id.museumName);
+                illusionName.setText(R.string.museum_of_illusions);
+
+                ImageButton illusionImage = findViewById(R.id.museumImage);
+                illusionImage.setImageResource(illusions);
+
+                TextView illusionStudent = findViewById(R.id.studentPrice);
+                illusionStudent.setText(R.string.child_price_illusions);
+
+                TextView illusionAdult = findViewById(R.id.adultPrice);
+                illusionAdult.setText(R.string.adult_price_illusions);
+
+                TextView illusionSenior = findViewById(R.id.seniorPrice);
+                illusionSenior.setText(R.string.senior_price_illusions);
+
                 break;
             default:
                 break;
@@ -124,8 +192,8 @@ private void setPrice(int option) {
     tax = (TextView) findViewById(R.id.tax);
     total = (TextView) findViewById(R.id.total);
 
-    ticketPrice.setText("$ " + totalOfTickets + "");
-    tax.setText("$ " + taxCost + "");
-    total.setText("$ " + totalCost + "");
+    ticketPrice.setText("$ " + df2.format(totalOfTickets) + "");
+    tax.setText("$ " + df.format(taxCost) + "");
+    total.setText("$ " + df.format(totalCost) + "");
 }
 }

@@ -1,19 +1,19 @@
 package com.example.museumapp;
 
 public class Prices {
-    public static final double childPriceMoMa = 0.0;
-    public static final double adultPriceMoMa = 25.0;
-    public static final double seniorPriceMoMa = 17.0;
+    public static final int childPriceMoMa = 14;
+    public static final int adultPriceMoMa = 25;
+    public static final int seniorPriceMoMa = 18;
 
-    public static final double childPriceHistory = 13.0;
-    public static final double adultPriceHistory = 23.0;
-    public static final double seniorPriceHistory = 18.0;
+    public static final int childPriceHistory = 18;
+    public static final int adultPriceHistory = 23;
+    public static final int seniorPriceHistory = 18;
 
-    public static final double childPriceIllusions = 18.0;
-    public static final double adultPriceIllusions = 22.0;
-    public static final double seniorPriceIllusions = 20.0;
+    public static final int childPriceIllusions = 20;
+    public static final int adultPriceIllusions = 22;
+    public static final int seniorPriceIllusions = 20;
 
-    public static final double childPriceMet = 0.0;
-    public static final double adultPriceMet = 25.0;
-    public static final double seniorPriceMet = 17.0;
+    public static final int childPriceMet = 12;
+    public static final int adultPriceMet = 25;
+    public static final int seniorPriceMet = 17;
 }
