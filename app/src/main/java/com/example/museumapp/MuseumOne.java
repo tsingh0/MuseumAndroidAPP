@@ -13,6 +13,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 import static com.example.museumapp.R.drawable.*;
 
+/**
+ * MuseumOne class controls the activity_museum_one.xml, it gives the interface functionality,
+ * to allow users to calculate the ticket price for four different museums abiding by the
+ * New York State sales tax to calculate the grand total. Interface does not allow for more
+ * than 5 of each type of ticket.
+ *
+ * @author Kacper Murdzek, Tarnavir Singh
+ */
 public class MuseumOne extends AppCompatActivity {
     private static int option;
     private static double adultTicketPrice;
@@ -29,7 +37,12 @@ public class MuseumOne extends AppCompatActivity {
     DecimalFormat df = new DecimalFormat("#,###,##0.00");
     DecimalFormat df2 = new DecimalFormat("0");
 
-
+    /**
+     * onCreate method sets the second activity and shows a different view for each museum.
+     * onCreate method displays ticket price for every age group for each museum.
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,11 +130,24 @@ public class MuseumOne extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Maximum of 5 tickets for each!",Toast.LENGTH_SHORT).show();
 
     }
+
+    /**
+     * setOption method sets the option instance variable.
+     * Option instance variable allows MuseumOne class to know which museum was
+     * selected on the start screen.
+     *
+     * @param option
+     */
     public static void setOption(int option){
         MuseumOne.option = option;
     }
 
-
+    /**
+     * goWebsite is ran when the museum image is clicked.
+     * This method brings the user to the museum homepage when the museum image is clicked on the second activity screen.
+     *
+     * @param view
+     */
     public void goWebsite(View view){
 
         switch(option){
@@ -142,6 +168,13 @@ public class MuseumOne extends AppCompatActivity {
         }
 
     }
+
+    /**
+     * calculate method sends the museum option to the set price method, so the price can be
+     * set according to the museum selected.
+     *
+     * @param view
+     */
     public void calculate(View view){
         switch(option){
             case 1:
@@ -161,7 +194,15 @@ public class MuseumOne extends AppCompatActivity {
         }
     }
 
-private void setPrice(int option) {
+    /**
+     * setPrice method sets the TextView fields on the interface
+     * to the respective cost of the tickets for each museum.
+     * setPrice method also calculates the sales tax for the museum
+     * and displays it.
+     *
+     * @param option
+     */
+    private void setPrice(int option) {
     spinner_child = findViewById(R.id.spinner_child);
     String numberOfChildren = spinner_child.getSelectedItem().toString();
     spinner_adult = findViewById(R.id.spinner_adult);

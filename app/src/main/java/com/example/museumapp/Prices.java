@@ -1,5 +1,10 @@
 package com.example.museumapp;
 
+/**
+ * Price class sets the prices for each museum and allows for the price to be accessed in other classes.
+ *
+ * @author Kacper Murdzek, Taranvir Singh
+ */
 public class Prices {
     public static final int childPriceMoMa = 14;
     public static final int adultPriceMoMa = 25;

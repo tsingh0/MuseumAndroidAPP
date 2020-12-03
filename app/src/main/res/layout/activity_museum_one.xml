@@ -133,14 +133,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="101dp"
             android:layout_marginEnd="101dp"
-            android:editable="false"
             android:ems="10"
             android:hint="@string/ticket_price"
             android:inputType="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button5" />
+            app:layout_constraintTop_toBottomOf="@+id/button5"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/tax"
@@ -149,14 +149,14 @@
             android:layout_marginStart="101dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="101dp"
-            android:editable="false"
             android:ems="10"
             android:hint="@string/sales_tax"
             android:inputType="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ticketPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/ticketPrice"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/total"
@@ -165,19 +165,13 @@
             android:layout_marginStart="101dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="100dp"
-            android:editable="false"
             android:ems="10"
             android:hint="@string/Grand_Total"
             android:inputType="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tax" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="177dp"
-            tools:layout_editor_absoluteY="690dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/tax"
+            android:importantForAutofill="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
