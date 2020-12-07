@@ -133,10 +133,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="101dp"
             android:layout_marginEnd="101dp"
+            android:editable="false"
             android:ems="10"
             android:hint="@string/ticket_price"
             android:importantForAutofill="no"
-            android:inputType="none"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -149,14 +149,14 @@
             android:layout_marginStart="101dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="101dp"
+            android:editable="false"
             android:ems="10"
             android:hint="@string/sales_tax"
-            android:inputType="none"
+            android:importantForAutofill="no"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ticketPrice"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@+id/ticketPrice" />
 
         <EditText
             android:id="@+id/total"
@@ -165,13 +165,13 @@
             android:layout_marginStart="101dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="100dp"
+            android:editable="false"
             android:ems="10"
             android:hint="@string/Grand_Total"
-            android:inputType="none"
+            android:importantForAutofill="no"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tax"
-            android:importantForAutofill="no" />
+            app:layout_constraintTop_toBottomOf="@+id/tax" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
