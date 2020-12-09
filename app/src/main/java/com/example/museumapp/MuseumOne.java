@@ -50,7 +50,7 @@ public class MuseumOne extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         switch (option) {
-            case 1:
+            case 0:
                 setContentView(R.layout.activity_museum_one);
 
                 TextView historyName = findViewById(R.id.museumName);
@@ -69,7 +69,7 @@ public class MuseumOne extends AppCompatActivity {
                 historySenior.setText(R.string.senior_price_history);
 
                 break;
-            case 2:
+            case 1:
                 setContentView(R.layout.activity_museum_one);
 
                 TextView metName = findViewById(R.id.museumName);
@@ -88,7 +88,7 @@ public class MuseumOne extends AppCompatActivity {
                 metSenior.setText(R.string.senior_price_met);
 
                 break;
-            case 3:
+            case 2:
                 setContentView(R.layout.activity_museum_one);
 
                 TextView momaName = findViewById(R.id.museumName);
@@ -107,7 +107,7 @@ public class MuseumOne extends AppCompatActivity {
                 momaSenior.setText(R.string.senior_price_moma);
 
                 break;
-            case 4:
+            case 3:
                 setContentView(R.layout.activity_museum_one);
 
                 TextView illusionName = findViewById(R.id.museumName);
@@ -153,16 +153,16 @@ public class MuseumOne extends AppCompatActivity {
     public void goWebsite(View view) {
 
         switch (option) {
-            case 1:
+            case 0:
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.amnh.org/")));
                 break;
-            case 2:
+            case 1:
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.metmuseum.org/")));
                 break;
-            case 3:
+            case 2:
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.moma.org/")));
                 break;
-            case 4:
+            case 3:
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://newyork.museumofillusions.us/")));
                 break;
             default:
@@ -179,6 +179,9 @@ public class MuseumOne extends AppCompatActivity {
      */
     public void calculate(View view) {
         switch (option) {
+            case 0:
+                setPrice(0);
+                break;
             case 1:
                 setPrice(1);
                 break;
@@ -187,9 +190,6 @@ public class MuseumOne extends AppCompatActivity {
                 break;
             case 3:
                 setPrice(3);
-                break;
-            case 4:
-                setPrice(4);
                 break;
             default:
                 break;
@@ -216,16 +216,16 @@ public class MuseumOne extends AppCompatActivity {
         int seniors = Integer.parseInt(numberOfSeniors);
         double totalOfTickets = 0;
         switch (option) {
-            case 1:
+            case 0:
                 totalOfTickets = children * Prices.childPriceHistory + adults * Prices.adultPriceHistory + seniors * Prices.seniorPriceHistory;
                 break;
-            case 2:
+            case 1:
                 totalOfTickets = children * Prices.childPriceMet + adults * Prices.adultPriceMet + seniors * Prices.seniorPriceMet;
                 break;
-            case 3:
+            case 2:
                 totalOfTickets = children * Prices.childPriceMoMa + adults * Prices.adultPriceMoMa + seniors * Prices.seniorPriceMoMa;
                 break;
-            case 4:
+            case 3:
                 totalOfTickets = children * Prices.childPriceIllusions + adults * Prices.adultPriceIllusions + seniors * Prices.seniorPriceIllusions;
 
         }

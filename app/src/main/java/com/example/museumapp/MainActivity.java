@@ -5,6 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * MainActivity class is the class responsible for creating the homepage of the app.
@@ -16,6 +21,8 @@ import android.view.View;
  */
 public class MainActivity extends AppCompatActivity {
 
+    ArrayList<String> museumList;
+    ArrayAdapter<String> arrayAdapter;
     /**
      * onCreate method sets the homepage to the first view xml.
      *
@@ -25,53 +32,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
+        ListView listview = (ListView)findViewById(R.id.listview);
+        museumList = new ArrayList<String>();
+        museumList.add("American Museum of Natural History");
+        museumList.add("Metropolitan Museum of Art");
+        museumList.add("The Museum of Modern Art");
+        museumList.add("Museum of Illusions");
+        arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.txtitem, museumList);
+        listview.setAdapter(arrayAdapter);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * onItemClick method is initiated when an item in the list view is clicked.
+             * The method takes the position of the element clicked and passes the position to the
+             * second activity for the view to be set.
+             *
+             * @param parent
+             * @param view
+             * @param position
+             * @param id
+             */
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               Intent intent = new Intent(MainActivity.this, MuseumOne.class);
+                MuseumOne.setOption(position);
+                startActivity(intent);
+            }
+        });
 
-    /**
-     * sendNextActivity_1 method is activated when the first museum is selected and
-     * sets the option to 1 and passes it to the next activity.
-     *
-     * @param view
-     */
-    public void sendNextActivity_1(View view) {
-        Intent intent = new Intent(this, MuseumOne.class);
-        MuseumOne.setOption(1);
-        startActivity(intent);
-    }
-
-    /**
-     * sendNextActivity_2 method is activated when the second museum is selected and
-     * sets the option to 2 and passes it to the next activity.
-     *
-     * @param view
-     */
-    public void sendNextActivity_2(View view) {
-        Intent intent = new Intent(this, MuseumOne.class);
-        MuseumOne.setOption(2);
-        startActivity(intent);
-    }
-
-    /**
-     * sendNextActivity_3 method is activated when the third museum is selected and
-     * sets the option to 3 and passes it to the next activity.
-     *
-     * @param view
-     */
-    public void sendNextActivity_3(View view) {
-        Intent intent = new Intent(this, MuseumOne.class);
-        MuseumOne.setOption(3);
-        startActivity(intent);
-    }
-
-    /**
-     * sendNextActivity_4 method is activated when the fourth museum is selected and
-     * sets the option to 4 and passes it to the next activity.
-     *
-     * @param view
-     */
-    public void sendNextActivity_4(View view) {
-        Intent intent = new Intent(this, MuseumOne.class);
-        MuseumOne.setOption(4);
-        startActivity(intent);
     }
 }
