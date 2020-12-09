@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textColor="@color/brown"
+        android:textSize="24sp"
         app:lineHeight="48sp" />
 
 </LinearLayout>

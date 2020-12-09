@@ -5,17 +5,20 @@
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#450707"
+    android:background="@color/tan"
     tools:context=".MainActivity">
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="398dp"
         android:layout_height="411dp"
+        android:divider="@color/tan"
+        android:dividerHeight="80sp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
